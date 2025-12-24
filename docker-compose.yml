@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: gramteach-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - backend/.env
+    depends_on:
+      - postgres
+      - redis
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: gramteach-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+  postgres:
+    image: postgres:15
+    container_name: gramteach-postgres
+    environment:
+      POSTGRES_DB: gramvideo_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: sarthak4615
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    # ❌ No ports needed (internal only)
+
+  redis:
+    image: redis:7
+    container_name: gramteach-redis
+    # ❌ No ports (internal only)
+
+volumes:
+  pgdata:

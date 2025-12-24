@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <defs>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="160" height="160" rx="20" fill="white"/>
+
+  <g transform="translate(20,25)">
+    <circle cx="40" cy="40" r="36" fill="url(#g2)"/>
+    <path d="M34 28 L50 40 L34 52"
+          stroke="white" stroke-width="3" fill="none"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="20" y="130" font-family="Inter" font-size="22" font-weight="700" fill="#0f172a">
+    GramTeach
+  </text>
+  <text x="125" y="130" font-family="Inter" font-size="22" font-weight="700" fill="#4f46e5">
+    .AI
+  </text>
+</svg>

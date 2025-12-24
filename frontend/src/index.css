@@ -1,0 +1,171 @@
+/* --------------------------------------------------
+   MUST BE FIRST: IMPORT THE GLOBAL THEME
+-------------------------------------------------- */
+@import "./styles/theme.css";
+
+/* --------------------------------------------------
+   BASIC RESET
+-------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg-100);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------
+   BUTTONS
+-------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: 0.25s;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-600));
+  color: var(--bg-100);
+  box-shadow: 0 8px 30px rgba(200, 90, 10, 0.18);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(200, 90, 10, 0.3);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.08);
+  background: transparent;
+  color: var(--muted);
+}
+
+.btn-outline:hover {
+  color: var(--accent-400);
+  border-color: var(--accent-400);
+  box-shadow: 0 0 20px rgba(200, 80, 10, 0.5);
+  transform: translateY(-4px);
+}
+
+/* --------------------------------------------------
+   HERO ACTIONS
+-------------------------------------------------- */
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+/* --------------------------------------------------
+   GRID & CARDS
+-------------------------------------------------- */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid var(--card-border);
+  padding: 20px;
+  border-radius: 14px;
+  transition: 0.25s;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-400);
+}
+
+.card-text {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+/* CARD HOVER GLOW */
+.hover-card:hover {
+  border-color: var(--accent-400);
+  box-shadow: 0 12px 32px rgba(200,90,10,0.45);
+  transform: translateY(-6px);
+}
+
+/* --------------------------------------------------
+   PREVIEW CARD
+-------------------------------------------------- */
+.preview-card {
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.preview-box {
+  flex: 1;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Preview Buttons */
+.preview-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.preview-btn {
+  flex: 1;
+  padding: 8px 0;
+  border-radius: 10px;
+  font-weight: 700;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--muted);
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.preview-btn:hover {
+  color: var(--accent-400);
+  border-color: var(--accent-400);
+  box-shadow: 0 0 20px rgba(200,80,10,0.5);
+  transform: translateY(-4px);
+}
+
+.preview-info {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------
+   GLOWING LOGO
+-------------------------------------------------- */
+.logo-glow {
+  filter: drop-shadow(0 0 12px rgba(124, 92, 255, 0.6))
+          drop-shadow(0 0 22px rgba(94, 231, 223, 0.4));
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+  0% { filter: drop-shadow(0 0 8px rgba(124,92,255,0.5)); }
+  50% { filter: drop-shadow(0 0 22px rgba(94,231,223,0.9)); }
+  100% { filter: drop-shadow(0 0 8px rgba(124,92,255,0.5)); }
+}

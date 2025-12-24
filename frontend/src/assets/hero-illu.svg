@@ -1,0 +1,6 @@
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" rx="20" fill="#f3f4f6"/>
+  <text x="50%" y="50%" font-size="22" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle">
+    AI Lesson Preview
+  </text>
+</svg>

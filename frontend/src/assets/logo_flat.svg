@@ -1,0 +1,113 @@
+<!-- logo_premium_bold.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 200" width="820" height="200" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">GramTeach.AI logo</title>
+  <desc id="logoDesc">Premium bold logo: gradient 3D icon + strong GramTeach.AI wordmark.</desc>
+
+  <defs>
+    <!-- Main gradient -->
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#5EE7DF"/>
+      <stop offset="0.45" stop-color="#7C5CFF"/>
+      <stop offset="1" stop-color="#4F46E5"/>
+    </linearGradient>
+
+    <!-- Soft highlight -->
+    <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="rgba(255,255,255,0.35)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+
+    <!-- Glow -->
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Shadow -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1f2937" flood-opacity="0.15"/>
+    </filter>
+
+    <!-- Shine mask -->
+    <mask id="shineMask">
+      <rect width="200" height="200" fill="white"/>
+      <rect id="shineRect" x="-150" y="-150" width="120" height="500" fill="black" transform="rotate(-20)"/>
+    </mask>
+
+    <style><![CDATA[
+      .wordmark {
+        font-family: Inter, "Segoe UI", Roboto, sans-serif;
+        font-weight: 800;        /* BOLDER */
+        fill: #0d0d0d;           /* MUCH DARKER for visibility */
+        letter-spacing: 0.5px;
+      }
+      .dotai {
+        fill: #7C5CFF;
+        font-weight: 900;
+      }
+      .tagline {
+        fill: #6b7280;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      /* FLOAT animation */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+        100% { transform: translateY(0px); }
+      }
+
+      /* SLOW 3D tilt */
+      @keyframes tilt {
+        0% { transform: rotateX(0deg) rotateY(0deg); }
+        50% { transform: rotateX(7deg) rotateY(6deg); }
+        100% { transform: rotateX(0deg) rotateY(0deg); }
+      }
+
+      /* Shine sweep */
+      @keyframes sweep {
+        0% { transform: translateX(-260px) rotate(-20deg); opacity: 0; }
+        20% { opacity: 0.9; }
+        60% { transform: translateX(320px) rotate(-20deg); opacity: 0.9; }
+        100% { opacity: 0; }
+      }
+
+      #shineRect { animation: sweep 3s linear infinite; }
+      .float { animation: float 4s ease-in-out infinite; }
+      .tilt { animation: tilt 10s ease-in-out infinite; }
+    ]]></style>
+  </defs>
+
+  <!-- ICON -->
+  <g transform="translate(60,20)" class="float tilt">
+    <g filter="url(#shadow)">
+      <rect width="160" height="160" rx="36" fill="url(#g1)"/>
+      <rect width="160" height="160" rx="36" fill="url(#g2)" opacity="0.22"/>
+      <ellipse cx="80" cy="60" rx="58" ry="36" fill="rgba(255,255,255,0.04)"/>
+    </g>
+
+    <!-- PLAY ARROW -->
+    <g transform="translate(48,40)">
+      <path d="M0 0 L72 36 L0 72 Z" fill="#fff" opacity="0.98" filter="url(#glow)"/>
+    </g>
+
+    <!-- SHINE -->
+    <g mask="url(#shineMask)">
+      <rect width="520" height="520" fill="white" opacity="0.07"/>
+      <rect id="shineRect" x="-150" y="-150" width="120" height="500" fill="white" opacity="0.13" transform="rotate(-20)"/>
+    </g>
+  </g>
+
+  <!-- BRAND NAME -->
+  <g transform="translate(260,70)">
+    <text x="0" y="0" class="wordmark" font-size="58">
+      GramTeach<tspan class="dotai">.AI</tspan>
+    </text>
+
+    <text x="0" y="45" class="tagline">Teach. Train. Transform.</text>
+  </g>
+</svg>

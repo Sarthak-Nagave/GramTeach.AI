@@ -1,0 +1,209 @@
+/* -------------------------------------------------------
+   DARK COFFEE PREMIUM THEME – FINAL POLISHED VERSION
+-------------------------------------------------------- */
+
+/* ============= COLOR SYSTEM ============= */
+:root {
+  --bg-100: #1f1712;
+  --bg-200: #251a13;
+  --panel: #2a2019;
+
+  --text: #fff8f2;
+  --muted: #d8c9b9;
+
+  --accent: #d35400;
+  --accent-400: #ff7a2b;
+  --accent-600: #b54800;
+
+  --glass: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.08);
+}
+
+/* ============= BASE RESET ============= */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background: linear-gradient(180deg, var(--bg-100), var(--bg-200) 55%);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ============= GLOBAL CONTAINER ============= */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  padding: 26px;
+  margin: 0 auto;
+}
+
+/* -------------------------------------------------------
+   ADMIN LAYOUT – LINKS, BUTTONS, PANELS
+-------------------------------------------------------- */
+
+/* Navigation Links */
+.admin-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.05);
+  color: var(--muted);
+  border-radius: 12px;
+  font-weight: 500;
+  transition: 0.25s ease;
+  text-decoration: none !important;
+}
+
+.admin-link:hover {
+  background: var(--accent-400);
+  color: #000;
+  transform: translateX(6px);
+  box-shadow: 0 4px 22px rgba(255,120,50,0.35);
+}
+
+.admin-link.active {
+  background: var(--accent-400);
+  color: #000;
+  font-weight: 700;
+  box-shadow: 0 0 26px rgba(255,120,50,0.45);
+}
+
+/* Admin Buttons */
+.admin-btn {
+  display: block;
+  width: 100%;
+  padding: 14px 18px;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgba(255,255,255,0.07);
+  color: var(--text);
+  transition: 0.25s;
+  border: none;
+  text-decoration: none !important;
+}
+
+.admin-btn:hover {
+  transform: scale(1.05);
+}
+
+.admin-btn.orange {
+  background: linear-gradient(90deg, var(--accent-400), var(--accent));
+  color: #000 !important;
+}
+
+.admin-btn.red {
+  background: linear-gradient(90deg, #ff4d4d, #cc1f1f);
+  color: #fff !important;
+}
+
+/* Page Wrapper */
+.admin-page {
+  padding: 110px 26px 40px; /* leaves space below fixed header */
+}
+
+/* -------------------------------------------------------
+   ADMIN DASHBOARD – GLOW CARD COMPONENTS
+-------------------------------------------------------- */
+
+.admin-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  padding: 28px;
+  border-radius: 18px;
+  text-align: center;
+  position: relative;
+  transition: 0.25s ease;
+}
+
+.admin-card:hover {
+  border-color: var(--accent-400);
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(255,120,50,0.35);
+}
+
+.admin-card h2 {
+  font-size: 40px;
+  font-weight: 800;
+  margin: 8px 0;
+}
+
+.admin-card p {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.admin-card .icon {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  color: var(--accent-400);
+  opacity: 0.8;
+}
+
+/* Grid */
+.admin-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 26px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1000px) {
+  .admin-grid-3 { grid-template-columns: repeat(2,1fr); }
+}
+
+@media (max-width: 640px) {
+  .admin-grid-3 { grid-template-columns: 1fr; }
+}
+
+/* -------------------------------------------------------
+   CHART BOX
+-------------------------------------------------------- */
+
+.admin-chart-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  padding: 26px;
+  border-radius: 18px;
+  margin: 32px 0;
+}
+
+/* -------------------------------------------------------
+   INLINE ACTION BUTTONS
+-------------------------------------------------------- */
+
+.admin-actions button,
+.admin-actions a {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: 0.2s ease;
+  margin-right: 10px;
+}
+
+.admin-actions button:hover,
+.admin-actions a:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* -------------------------------------------------------
+   REMOVE UNDERLINES IN ADMIN AREA
+-------------------------------------------------------- */
+
+.admin-page a,
+.admin-page button {
+  text-decoration: none !important;
+}

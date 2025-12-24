@@ -1,0 +1,54 @@
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+.logo-3d {
+  width: 55px;
+  height: 55px;
+  border-radius: 14px;
+  animation: float 4s ease-in-out infinite, rotate3d 8s linear infinite;
+  filter: drop-shadow(0 4px 12px rgba(80, 0, 255, 0.35));
+  position: relative;
+}
+
+/* Smooth Floating Movement */
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 3D Rotation */
+@keyframes rotate3d {
+  0%   { transform: rotateX(0deg) rotateY(0deg); }
+  50%  { transform: rotateX(10deg) rotateY(10deg); }
+  100% { transform: rotateX(0deg) rotateY(0deg); }
+}
+
+/* Shine Effect */
+.logo-3d::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  animation: shine 3s infinite;
+  pointer-events: none;
+  border-radius: 14px;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  60% { transform: translateX(120%); }
+  100% { transform: translateX(120%); }
+}
