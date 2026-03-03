@@ -292,7 +292,7 @@ Sarthak Nivrutti Nagave
 B.Tech Computer Science (Artificial Intelligence)
 Pune, India
 
-GitHub: [https://github.com/yourusername](https://github.com/yourusername)
+GitHub: [https://github.com/yourusername]([https://github.com/yourusername](https://github.com/Sarthak-Nagave))
 
 ---
 
