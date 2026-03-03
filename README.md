@@ -1,4 +1,4 @@
-#GramTeach.AI
+GramTeach.AI
 
 ### Enterprise AI-Powered Multilingual Education Platform with Integrated IAM
 
